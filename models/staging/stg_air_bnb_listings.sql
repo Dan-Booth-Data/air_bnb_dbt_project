@@ -31,7 +31,6 @@ renamed as (
         host_since,
         host_acceptance_rate,
         host_is_superhost as is_superhost,
-        host_verifications,
         host_identity_verified,
 
         number_of_reviews,
