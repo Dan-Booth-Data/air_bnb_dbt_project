@@ -14,8 +14,8 @@ select
         bathrooms_text,
         bedrooms,
         beds,
-        amenities,
-        listing_price, -- not included in fct_calendar because there in the data provided there is one price per listing.
+        listing_price, -- not included in fct_calendar because in the data provided there is one price per listing.
         minimum_nights,
-        maximum_nights
+        maximum_nights,
+        host_id
 from {{ ref('stg_air_bnb_listings')}}

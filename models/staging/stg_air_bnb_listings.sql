@@ -22,7 +22,6 @@ renamed as (
         bathrooms_text,
         bedrooms,
         beds,
-        amenities,
         replace(replace(price, '$', ''), ',', '')::number as listing_price,
         minimum_nights,
         maximum_nights,
