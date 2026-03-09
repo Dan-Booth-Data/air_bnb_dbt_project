@@ -23,7 +23,7 @@ renamed as (
         bedrooms,
         beds,
         amenities,
-        price,
+        replace(price, '$', '')::number as price($),
         minimum_nights,
         maximum_nights,
         minimum_minimum_nights,
