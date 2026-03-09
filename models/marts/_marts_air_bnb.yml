@@ -1,0 +1,56 @@
+version: 2
+
+models:
+
+  - name: dim_listing
+    description: Dimension table containing the attributes about a listing
+    columns:
+      - name: listing_id
+        description: unique identifier of a listing
+        tests:
+          - unique
+          - not_null
+      
+      - name: host_id
+        description: unique identifier of a host
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_host')
+              field: host_id
+
+
+  - name: dim_host
+    description: Information about each airbnb host
+    columns:
+      - name: host_id
+        description: unique identifier of a host
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_calendar
+    description: Daily listing availability for each airbnb listing
+    columns:
+      - name: listing_id
+        description: unique identifier of a listing
+        tests:
+          - not_null        
+          - relationships:
+              to: ref('dim_listing')
+              field: listing_id
+
+      - name: date
+        tests:
+          - not_null
+  
+
+  - name: fct_reviews
+    description: Avg review ratings for each airbnb listing
+    columns:
+      - name: listing_id
+        description: unique identifier of a listing
+        tests:
+          - unique
+          - not_null
+          

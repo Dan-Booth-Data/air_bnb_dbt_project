@@ -1,0 +1,37 @@
+version: 2
+
+models:
+
+  - name: stg_air_bnb_listings
+    description: Airbnb listings dataset with columns renamed and unnecessary fields removed
+
+    columns:
+      - name: listing_id
+        description: Unique identifier for each listing
+        tests:
+          - not_null
+          - unique
+
+
+      - name: host_id
+        tests:
+          - not_null
+
+      
+
+
+
+  - name: stg_air_bnb_calendar
+    description: Listing availability of airbnb by day
+
+    columns:
+      - name: listing_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_air_bnb_listings')
+              field: listing_id
+
+      - name: date
+        tests:
+          - not_null
