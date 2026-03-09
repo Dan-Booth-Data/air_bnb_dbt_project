@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: air_bnb_raw
+    description: Raw Airbnb datasets loaded from source files. Originally pulled from insideairbnb.com.
     database: air_bnb
     schema: air_bnb_raw
     tables:
