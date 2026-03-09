@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: air_bnb_raw
+    database: air_bnb
+    schema: air_bnb_raw
+    tables:
+      - name: air_bnb_calendar
+      - name: air_bnb_listings
