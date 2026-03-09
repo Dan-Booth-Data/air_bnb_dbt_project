@@ -1,5 +1,5 @@
-    select
-        listing_id,
-        date,
-        available
-    from {{ ref('fct_calendar') }}
+select
+    listing_id,
+    date,
+    available
+from {{ ref('stg_air_bnb_calendar') }}
